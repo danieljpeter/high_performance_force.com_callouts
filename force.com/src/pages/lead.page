@@ -1,0 +1,29 @@
+<apex:page controller="leadController" standardStylesheets="true">
+
+<apex:form >
+	<apex:pageBlock >
+	<apex:pageBlockButtons >
+		<apex:commandButton action="{!sendNative}" value="Process Callouts Natively"/>
+		<apex:commandButton action="{!sendProxy}" value="Process Callouts via Proxy"/>
+	</apex:pageBlockButtons>
+
+	<apex:dataTable value="{!leadList}" var="l" styleClass="tableClass">
+		<apex:column >
+			<apex:outputText value="{!l.Id} * "/>
+		</apex:column>
+		<apex:column >
+			<apex:outputText value="{!l.FirstName} "/>
+		</apex:column>
+		<apex:column >
+			<apex:outputText value="{!l.LastName} * "/>
+		</apex:column>
+		<apex:column >
+			<apex:outputText value="{!l.Company}"/>
+		</apex:column>
+	</apex:dataTable>
+	
+	</apex:pageBlock>
+</apex:form>
+
+
+</apex:page>
